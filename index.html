@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar avec Popup</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="script.js" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" ><img src="/img/medical_logo.png" alt=""></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <button class="btn btn-secondary ml-2" id="appointmentBtn">
+                Prendre un Rendez-vous
+              </button>
+            </li>
+          <li class="nav-item">
+            <button class="btn btn-primary" id="loginBtn">Espace Médecin</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-5 ">
+        <div class="row ">
+            <!-- Calendrier -->
+            <div class="col-md-12 ">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Heure/Jour</th>
+                            <th scope="col">Lundi</th>
+                            <th scope="col">Mardi</th>
+                            <th scope="col">Mercredi</th>
+                            <th scope="col">Jeudi</th>
+                            <th scope="col">Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Vous pouvez générer ces lignes avec JavaScript pour éviter la répétition -->
+                        <tr>
+                            <th scope="row">08:00</th>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td>RESERVE</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">09:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td>RESERVE</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td>RESERVE</td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td>RESERVE</td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">13:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">15:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">16:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">17:00</th>
+                            <!-- Vous pouvez ajouter des classes ou des ids aux cellules pour les manipuler avec JavaScript -->
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td>RESERVE</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Ajoutez plus de lignes selon les heures de travail -->
+                    </tbody>
+                </table>
+            </div>
+    <!-- POP UP LOGIN  -->
+    <div id="loginPopup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <form>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+      </div>
+    </div>
+    <!-- POP UP CREER RDV -->
+    <div id="appointmentPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-appointment">&times;</span>
+        <form id="appointmentForm">
+          <div class="form-group">
+            <label for="patientName">Votre nom:</label>
+            <input type="text" class="form-control" id="patientName" required />
+          </div>
+          <div class="form-group">
+            <label for="appointmentDate">Date du rendez-vous:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="appointmentDate"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="appointmentTime">Heure du rendez-vous:</label>
+            <input
+              type="time"
+              class="form-control"
+              id="appointmentTime"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="reason">Motif de la visite:</label>
+            <textarea
+              class="form-control"
+              id="reason"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Confimer le rendez-vous
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
