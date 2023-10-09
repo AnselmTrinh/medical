@@ -26,7 +26,7 @@
 }
 /* Vous pouvez ajouter ce CSS dans votre fichier CSS existant */
 table thead th {
-  background-color: #007bff;
+  background-color: #ffffff;
   color: white;
 }
 
@@ -39,4 +39,18 @@ table tbody th {
 }
 img {
   width: 60px;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
